@@ -16,3 +16,8 @@ from Vagrant, until this functionality is implemented in Vagrant itself.
 
     915bee0,default,saved
 
+## Todo
+
+* Should probably use the machine-readable UI format
+* Or, fix this in vagrant itself by splitting the command output from
+  its data in the global-status plugin
