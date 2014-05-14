@@ -9,7 +9,6 @@ module VagrantPlugins
 
       def execute
         attrs = [:id, :name, :state]
-        @env.ui.warn("I'm here", new_line: true)
         entries = []
         Vagrant::Util::SilenceWarnings.silence! do
           @env.machine_index.each do |entry|
@@ -21,7 +20,6 @@ module VagrantPlugins
           end
         end
 
-        @env.ui.warn "here", new_line: true
         if entries.empty?
           @env.ui.info(I18n.t("vagrant.global_status_none"))
           return 0

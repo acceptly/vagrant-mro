@@ -9,6 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Sam Halicke"]
   spec.email         = ["sam@twenty20.com"]
   spec.summary       = %q{Produces machine-readable global status output.}
+  spec.description   = %q{Produces machine-readable global status output.}
   spec.homepage      = "https://github.com/acceptly/vagrant-mro"
   spec.license       = "MIT"
 
