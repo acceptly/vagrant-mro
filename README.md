@@ -1,29 +1,18 @@
-# Vagrant::Mro
+# VagrantPlugins::MRO
 
-TODO: Write a gem description
+This is a solution for getting machine-readable global status output
+from Vagrant, until this functionality is implemented in Vagrant itself.
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-    gem 'vagrant-mro'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install vagrant-mro
+    vagrant plugin install vagrant-mro
 
 ## Usage
 
-TODO: Write usage instructions here
+    vagrant mro
 
-## Contributing
+    # output:
+    # id, name, state
 
-1. Fork it ( https://github.com/[my-github-username]/vagrant-mro/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+    915bee0,default,saved
+
