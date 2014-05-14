@@ -14,7 +14,6 @@ module VagrantPlugins
 
       name "vagrant-mro"
       description "Produces machine-readable output of global status."
-
       command :mro do
         require_relative 'command'
         Command

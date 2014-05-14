@@ -1,3 +1,5 @@
+require 'vagrant/util/silence_warnings'
+
 module VagrantPlugins
   module MRO
     class Command < Vagrant.plugin("2", :command)
@@ -7,23 +9,19 @@ module VagrantPlugins
 
       def execute
         attrs = [:id, :name, :state]
-
+        @env.ui.warn("I'm here", new_line: true)
         entries = []
-        prune   = []
-        @env.machine_index.each do |entry|
-          # Always prune invalid entries.
-          if !entry.valid?(@env.home_path)
-            prune << entry
-            next
+        Vagrant::Util::SilenceWarnings.silence! do
+          @env.machine_index.each do |entry|
+            # Always prune invalid entries.
+            if !entry.valid?(@env.home_path)
+              @env.machine_index.delete(entry.id)
+            end
+            entries << entry
           end
-          entries << entry
-        end
-        # Prune all the entries to prune
-        prune.each do |entry|
-          deletable = @env.machine_index.get(entry.id)
-          @env.machine_index.delete(deletable) if deletable
         end
 
+        @env.ui.warn "here", new_line: true
         if entries.empty?
           @env.ui.info(I18n.t("vagrant.global_status_none"))
           return 0
