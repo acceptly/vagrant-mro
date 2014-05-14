@@ -7,9 +7,9 @@ Gem::Specification.new do |spec|
   spec.name          = "vagrant-mro"
   spec.version       = VagrantPlugins::MRO::VERSION
   spec.authors       = ["Sam Halicke"]
-  spec.email         = ["sam@halicke.com"]
+  spec.email         = ["sam@twenty20.com"]
   spec.summary       = %q{Produces machine-readable global status output.}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/acceptly/vagrant-mro"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
